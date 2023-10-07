@@ -1,0 +1,187 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: radial-gradient(white, gray, black);
+}
+
+section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform-style: preserve-3d;
+}
+
+.book {
+    width: 600px;
+    height: 400px;
+    // border: 1px solid black;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: perspective(600px) rotateX(50deg);
+
+    >.paper {
+        width: 50%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform-style: preserve-3d;
+
+        >div {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border: 1px solid black;
+            border-bottom: 5px solid rgb(53, 52, 52);
+        }
+
+        &:nth-of-type(1) {
+            transform: translateZ(40px);
+
+            >div {
+                &:nth-of-type(1) {
+                    background-color: blue;
+                    transform-origin: right;
+                    transform: rotateY(15deg);
+                    animation-name: paper1;
+                    animation-duration: 5s;
+                    animation-delay: 2s;
+                    animation-fill-mode: forwards;
+                    background-image: url(../img/2.webp);
+                    background-size: cover;
+                    background-position: center;
+
+                }
+
+                &:nth-of-type(2) {
+                    background-color: rgb(255, 255, 255);
+                    transform-origin: right;
+                    transform: rotateY(160deg);
+                    background-image: url(../img/1.webp);
+                    background-size: cover;
+
+                }
+            }
+        }
+
+        &:nth-of-type(2) {
+            transform: translateZ(40px);
+
+            >div {
+                &:nth-of-type(1) {
+                    background-color: red;
+                    transform-origin: right;
+                    transform: rotateY(14.1deg);
+                    animation-name: paper1;
+                    animation-duration: 5s;
+                    animation-delay: 2s;
+                    animation-fill-mode: forwards;
+                    background-image: url(../img/3.webp);
+                    background-size: cover;
+                    background-position: center;
+
+                }
+
+                &:nth-of-type(2) {
+                    background-color: rgb(255, 255, 255);
+                    transform-origin: right;
+                    transform: rotateY(165deg);
+                }
+            }
+        }
+
+        &:nth-of-type(3) {
+            transform: translateZ(40px);
+
+            >div {
+                &:nth-of-type(1) {
+                    background-color: rgb(0, 0, 0);
+                    transform-origin: right;
+                    transform: rotateY(5deg);
+                    animation-name: paper2;
+                    animation-delay: 7s;
+                    animation-duration: 5s;
+                    animation-fill-mode: forwards;
+                    background-image: url(../img/4.avif);
+                    background-size: cover;
+                }
+
+                &:nth-of-type(2) {
+                    background-color: rgb(181, 182, 177);
+                    transform-origin: right;
+                    transform: rotateY(170deg);
+                }
+            }
+        }
+
+        &:nth-of-type(4) {
+            transform: translateZ(40px);
+
+            >div {
+                &:nth-of-type(1) {
+                    background-color: rgb(144, 151, 146);
+                    transform-origin: right;
+                    transform: rotateY(4deg);
+                    animation-name: paper2;
+                    animation-delay: 7s;
+                    animation-duration: 5s;
+                    animation-fill-mode: forwards;
+                    background-image: url(../img/5.jpg);
+                    background-size: cover;
+                }
+
+                &:nth-of-type(2) {
+                    background-color: rgb(140, 140, 140);
+                    transform-origin: right;
+                    transform: rotateY(176deg);
+                }
+            }
+        }
+
+        &:nth-of-type(5) {
+            transform: translateZ(40px);
+
+            >div {
+                &:nth-of-type(1) {
+                    background-color: rgb(164, 255, 190);
+                    transform-origin: right;
+                    transform: rotateY(0deg);
+                    animation-name: paper3;
+                    animation-delay: 12s;
+                    animation-duration: 5s;
+                    animation-fill-mode: forwards;
+                    background-image: url(../img/6.webp);
+                    background-size: cover;
+                }
+
+                &:nth-of-type(2) {
+                    background-color: rgb(255, 223, 223);
+                    transform-origin: right;
+                    transform: rotateY(180deg);
+                }
+            }
+        }
+    }
+}
+
+@keyframes paper1 {
+    to {
+        transform: rotateY(158deg);
+        display: none;
+    }
+}
+
+@keyframes paper2 {
+    to {
+        transform: rotateY(150deg);
+        display: none;
+    }
+}
